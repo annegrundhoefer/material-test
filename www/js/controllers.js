@@ -148,14 +148,15 @@ angular.module('starter.controllers', [])
     // Set Header
     $scope.$parent.showHeader();
     $scope.$parent.clearFabs();
-    $scope.$parent.setHeaderFab('left');
-
-    // Delay expansion
+    $scope.isExpanded = false;
+    $scope.$parent.setExpanded(false);
+    $scope.$parent.setHeaderFab(false);
+    // Set Motion
     $timeout(function() {
-        $scope.isExpanded = true;
-        $scope.$parent.setExpanded(true);
+        ionicMaterialMotion.slideUp({
+            selector: '.slide-up'
+        });
     }, 300);
-
     // Set Motion
     ionicMaterialMotion.fadeSlideInRight();
 
@@ -206,11 +207,18 @@ angular.module('starter.controllers', [])
 })
 
 .controller('GalleryCtrl', function($scope, $stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion) {
+   // Set Header
     $scope.$parent.showHeader();
     $scope.$parent.clearFabs();
-    $scope.isExpanded = true;
-    $scope.$parent.setExpanded(true);
+    $scope.isExpanded = false;
+    $scope.$parent.setExpanded(false);
     $scope.$parent.setHeaderFab(false);
+    // Set Motion
+    $timeout(function() {
+        ionicMaterialMotion.slideUp({
+            selector: '.slide-up'
+        });
+    }, 300);
 
     // Activate ink for controller
     ionicMaterialInk.displayEffect();
