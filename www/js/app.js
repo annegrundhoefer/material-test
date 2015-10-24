@@ -79,6 +79,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
             }
         }
     })
+    
+    .state('app.list', {
+        url: '/list',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/list.html',
+                controller: 'listCtrl'
+            }
+        }
+    })
+
 
         .state('app.friends', {
         url: '/friends',
