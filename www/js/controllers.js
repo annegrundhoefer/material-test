@@ -1,6 +1,8 @@
 /* global angular, document, window */
 'use strict';
 
+Parse.initialize("U26Rk9EhZo9Jw0pXwQUt6EIgJNALEhK9x0MR9zsY", "9A5hqleV1BClJoe1JuEmqyleMEc4JOCmgyLGaNVy")
+
 angular.module('starter.controllers', [])
 
 .controller('AppCtrl', function($scope, $ionicModal, $ionicPopover, $timeout) {
@@ -96,54 +98,47 @@ angular.module('starter.controllers', [])
 })
 
 .controller('singlePostCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk) {
-    // Set Header
-    $scope.$parent.showHeader();
     $scope.$parent.clearFabs();
-    $scope.isExpanded = false;
-    $scope.$parent.setExpanded(false);
-    $scope.$parent.setHeaderFab(false);
-
-    // Set Motion
-    $timeout(function() {
-        ionicMaterialMotion.slideUp({
-            selector: '.slide-up'
-        });
-    }, 300);
-
-    $timeout(function() {
-        ionicMaterialMotion.fadeSlideInRight({
-            startVelocity: 3000
-        });
-    }, 700);
-
-    // Set Ink
+    // $timeout(function() {
+    //     $scope.$parent.hideHeader();
+    // }, 0);
     ionicMaterialInk.displayEffect();
 })
 
 .controller('categoriesCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk) {
-        // Set Header
+
     $scope.$parent.showHeader();
     $scope.$parent.clearFabs();
     $scope.isExpanded = false;
     $scope.$parent.setExpanded(false);
     $scope.$parent.setHeaderFab(false);
 
-    // Set Motion
-    $timeout(function() {
-        ionicMaterialMotion.slideUp({
-            selector: '.slide-up'
-        });
-    }, 300);
+    var EventCategory = Parse.Object.extend("EventCategory");
+    var query = new Parse.Query(EventCategory);
 
-    $timeout(function() {
-        ionicMaterialMotion.fadeSlideInRight({
-            startVelocity: 3000
-        });
-    }, 700);
+    query.find({
+        success: function(results) {
+            var categoriesArray = [];
 
-    // Set Ink
+            for (var i = 0; i < results.length; i++) {
+                categoriesArray.push(results[i].toJSON());
+            }
+
+            $scope.model = {
+                categories : categoriesArray
+            }
+
+            console.log($scope);
+        },
+        error: function(error) {
+
+        }
+    });
+
+    $scope.$parent.clearFabs();
     ionicMaterialInk.displayEffect();
 })
+
 .controller('FriendsCtrl', function($scope, $stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion) {
     // Set Header
     $scope.$parent.showHeader();
