@@ -104,18 +104,18 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
         }
     })
 
-    .state('app.profile', {
-        url: '/profile',
+    .state('app.singlePost', {
+        url: '/singlePost',
         views: {
             'menuContent': {
-                templateUrl: 'templates/profile.html',
-                controller: 'ProfileCtrl'
+                templateUrl: 'templates/singlePost.html',
+                controller: 'singlePostCtrl'
             },
             'fabContent': {
-                template: '<button id="fab-profile" class="button button-fab button-fab-bottom-right button-energized-900"><i class="icon ion-plus"></i></button>',
+                template: '<button id="fab-singlePost" class="button button-fab button-fab-bottom-right button-energized-900"><i class="icon ion-plus"></i></button>',
                 controller: function ($timeout) {
                     /*$timeout(function () {
-                        document.getElementById('fab-profile').classList.toggle('on');
+                        document.getElementById('fab-singlePost').classList.toggle('on');
                     }, 800);*/
                 }
             }
