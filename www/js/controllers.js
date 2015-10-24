@@ -10,12 +10,12 @@ angular.module('starter.controllers', [])
     $scope.hasHeaderFabLeft = false;
     $scope.hasHeaderFabRight = false;
 
-    var navIcons = document.getElementsByClassName('ion-navicon');
-    for (var i = 0; i < navIcons.length; i++) {
-        navIcons.addEventListener('click', function() {
-            this.classList.toggle('active');
-        });
-    }
+    // var navIcons = document.getElementsByClassName('ion-navicon');
+    // for (var i = 0; i < navIcons.length; i++) {
+    //     navIcons.addEventListener('click', function() {
+    //         this.classList.toggle('active');
+    //     });
+    // }
 
     ////////////////////////////////////////
     // Layout Methods
@@ -88,6 +88,22 @@ angular.module('starter.controllers', [])
 })
 
 .controller('LoginCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk) {
+    $scope.$parent.clearFabs();
+    $timeout(function() {
+        $scope.$parent.hideHeader();
+    }, 0);
+    ionicMaterialInk.displayEffect();
+})
+
+.controller('singlePostCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk) {
+    $scope.$parent.clearFabs();
+    $timeout(function() {
+        $scope.$parent.hideHeader();
+    }, 0);
+    ionicMaterialInk.displayEffect();
+})
+
+.controller('categoriesCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk) {
     $scope.$parent.clearFabs();
     $timeout(function() {
         $scope.$parent.hideHeader();
