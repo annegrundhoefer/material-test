@@ -1,27 +1,12 @@
-<ion-view view-title="Event Categories" align-title="left">
-    <ion-content class="scroll-content ionic-scroll has-header">
-        <ul class="list condensed-space">
-            <li class="item clear-bg item-bg-image waves-effect waves-button waves-light has-mask-reverse">
-            <h2>Theater</h2>
-            <p>lorem ipsum description</p>
-            <img src="../img/material1.jpg" style="-webkit-transition: 0.02s; transition: 0.02s;">
-            </li>
-            <li class="item clear-bg item-bg-image waves-effect waves-button waves-light has-mask-reverse">
-            <h2>Music</h2>
-            <p>lorem ipsum description</p>
-            <img src="../img/material2.jpg" style="-webkit-transition: 0.02s; transition: 0.02s;">
-            </li>
-            <li class="item clear-bg item-bg-image waves-effect waves-button waves-light has-mask-reverse">
-            <h2>Art</h2>
-            <p>lorem ipsum description</p>
-            <img src="../img/material3.jpg" style="-webkit-transition: 0.02s; transition: 0.02s;">
-            </li>
-            <li class="item clear-bg item-bg-image waves-effect waves-button waves-light has-mask-reverse">
-            <h2>Social</h2>
-            <p>lorem ipsum description</p>
-            <img src="../img/material4.jpg" style="-webkit-transition: 0.02s; transition: 0.02s;">
-            </li>
-        </ul>
+<ion-view view-title="Event Categories" align-title="left" ng-controller="categoriesCtrl">
+    <ion-content ng-class="{expanded:isExpanded}" class="scroll-content ionic-scroll  has-header">
+        <ion-list>
+            <ion-item class="item clear-bg item-bg-image waves-effect waves-button waves-light has-mask-reverse" ng-repeat="cat in model.categories">
+                <h2>{{ cat.title }}</h2>
+                <p>{{cat.description}}</p>
+                <img src="{{cat.categoryImage.url}}" style="-webkit-transition: 0.02s; transition: 0.02s;">
+            </ion-item>
+        </ion-list>
     </ion-content>
 </ion-view>
 
