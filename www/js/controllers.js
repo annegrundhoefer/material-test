@@ -99,9 +99,11 @@ angular.module('starter.controllers', [])
 
 .controller('singlePostCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk) {
     $scope.$parent.clearFabs();
-    // $timeout(function() {
-    //     $scope.$parent.hideHeader();
-    // }, 0);
+    ionicMaterialInk.displayEffect();
+})
+
+.controller('listCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk) {
+    $scope.$parent.clearFabs();
     ionicMaterialInk.displayEffect();
 })
 
