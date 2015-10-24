@@ -1,9 +1,11 @@
 <ion-view view-title="Event Categories" align-title="left" ng-controller="categoriesCtrl">
-    <ion-content ng-class="{expanded:isExpanded}" class="scroll-content ionic-scroll  has-header">
+    <ion-content ng-class="{expanded:$scope.isExpanded}" class="scroll-content ionic-scroll has-header">
         <ion-list>
             <ion-item class="item clear-bg item-bg-image waves-effect waves-button waves-light has-mask-reverse" ng-repeat="cat in model.categories">
-                <h2>{{ cat.title }}</h2>
-                <p>{{cat.description}}</p>
+                <a ui-sref="app.singlePost">
+                    <h2>{{ cat.title }}</h2>
+                    <p>{{cat.description}}</p>
+                </a>
                 <img src="{{cat.categoryImage.url}}" style="-webkit-transition: 0.02s; transition: 0.02s;">
             </ion-item>
         </ion-list>

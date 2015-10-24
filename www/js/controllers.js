@@ -107,7 +107,7 @@ angular.module('starter.controllers', [])
     ionicMaterialInk.displayEffect();
 })
 
-.controller('categoriesCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk) {
+.controller('categoriesCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk, ionicMaterialMotion) {
 
     $scope.$parent.showHeader();
     $scope.$parent.clearFabs();
@@ -136,6 +136,14 @@ angular.module('starter.controllers', [])
 
         }
     });
+
+    $timeout(function() {
+        ionicMaterialMotion.slideUp({
+            selector: '.slide-up'
+        });
+    }, 300);
+    // Set Motion
+    ionicMaterialMotion.fadeSlideInRight();
 
     $scope.$parent.clearFabs();
     ionicMaterialInk.displayEffect();
