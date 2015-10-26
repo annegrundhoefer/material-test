@@ -293,6 +293,18 @@ angular.module('starter.controllers', [])
     ionicMaterialInk.displayEffect();
 })
 
+/*********************************************/
+/*         
+    Edit Profile
+*/
+/*********************************************/
+
+.controller('EditProfileCtrl', function($scope, $stateParams, $timeout) {
+    $scope.alert = function() {
+        console.log('this works!');
+    }
+})
+
 .controller('ActivityCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
     $scope.$parent.showHeader();
     $scope.$parent.clearFabs();
