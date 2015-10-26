@@ -1,17 +1,18 @@
 <ion-view view-title="{{title}}" align-title="left" ng-model="events">
     <ion-content ng-class="{expanded:$scope.isExpanded}" class="has-header">
         <div class="hero has-mask" style="background-image: url('{{event.image.url}}')">
-        	<div class="content">
-                <button class="button button-large button-clear flat waves-effect waves-button waves-light icon ion-heart pull-right text-white"></button>
-                <button class="button button-large button-clear flat waves-effect waves-button waves-light icon ion-images pull-right text-white"></button>
-                <button class="button button-large button-clear flat waves-effect waves-button waves-light icon ion-map pull-right text-white"></button>
-            </div>
-            </div>
-            <div class="mid-bar dark-bg z1 padding">
+        	<div class="content meta">
                 <h3>{{event.title}}</h3>
-                <p>$1,530 USD</p>
-            </div>		
-            <div class="content double-padding">
+                <p class="date">July 24, 2014</p>
+            </div>
+         </div>	
+            <div class="content meta double-padding">
+                <h5 class="heading uppercase">Venue Name</h5>
+                <p>Fort Work 8th Floor</p>
+                <h5 class="heading uppercase">Ticket Price</h5>
+                <h2>$30.00</h2>
+                <div style="clear: both"></div>
+                <h5 class="heading uppercase">About</h5>
                 <p class="text-muted">
                     {{event.description}}
                 </p>
