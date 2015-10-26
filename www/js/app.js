@@ -70,6 +70,16 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services', 'i
         }
     })
 
+    .state('app.edit-profile', {
+        url: '/EditProfile',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/edit-profile.html',
+                controller: 'EditProfileCtrl'
+            }
+        }
+    })
+
     .state('app.event', {
         url: '/event/:eventId',
         views: {
