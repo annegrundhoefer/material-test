@@ -3,27 +3,19 @@
         <div class="hero has-mask" style="background-image: url('{{event.image.url}}')">
         	<div class="content meta">
                 <h3>{{event.title}}</h3>
-                <p class="date">July 24, 2014</p>
+                <p class="date">{{event.date}}</p>
             </div>
          </div>	
             <div class="content meta double-padding">
                 <h5 class="heading uppercase">Venue Name</h5>
-                <p>Fort Work 8th Floor</p>
+                <p>{{event.venue}}</p>
                 <h5 class="heading uppercase">Ticket Price</h5>
-                <h2>$30.00</h2>
+                <h2>{{event.price}}</h2><a class="button button-stable">Buy tickets</a>
                 <div style="clear: both"></div>
                 <h5 class="heading uppercase">About</h5>
                 <p class="text-muted">
                     {{event.description}}
                 </p>
-            </div>
-            <div class="bar bar-footer bar-dark">
-                <div class="title" style="text-align: left;">Grab some tickets</div>
-                <div class="buttons buttons-right">
-                    <button class="button button-assertive-900 button-fab">
-                        <img src="../img/ecommerce_ticket.svg" width="50%" style="margin-top: 25%;">
-                    </button>
-                </div>
             </div>
     </ion-content>
 </ion-view>
