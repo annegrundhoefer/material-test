@@ -208,6 +208,8 @@ angular.module('starter.controllers', [])
 .controller('eventCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, Events) {
     var events = Events.findOne($stateParams.eventId);
 
+    console.log($stateParams);
+
     events.then(function(results){
         $scope.event = results.toJSON();
     });

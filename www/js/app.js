@@ -24,12 +24,14 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services', 'i
 .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 
     // Turn off caching for demo simplicity's sake
-    $ionicConfigProvider.views.maxCache(0);
+    $ionicConfigProvider.views.maxCache(10);
 
     /*
     // Turn off back button text
     $ionicConfigProvider.backButton.previousTitleText(false);
     */
+
+    $ionicConfigProvider.backButton.previousTitleText(false);
 
     $stateProvider.state('app', {
         url: '/app',

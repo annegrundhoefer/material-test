@@ -53,17 +53,15 @@ angular.module('starter.services', [])
     }
   );
 
-
   return {
     all: function() {
       return events;
     },
     get: function(categoryId) {      
-      // query.equalTo("eventCategory",{ __type: "Pointer", className: "EventCategory", objectId: categoryId });
-      // var events = query.find();
       return events;
     },
     findOne: function(eventId) {
+      console.log(eventId);
       var events = query.get(eventId, {
         success: function(result) {
           return result;

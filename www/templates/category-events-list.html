@@ -15,7 +15,7 @@
         </div> -->
 
         <ion-list class="list item card-item in done">
-        	<ion-item class="card stable-bg ink ink-dark" ng-repeat="event in events" href="#/app/event/{{event.objectId}}">
+        	<ion-item class="card stable-bg ink ink-dark" ng-repeat="event in events" ui-sref="app.event({eventId: event.objectId })">
                 <img src="{{event.image.url}}">
                 <h2>{{event.title}}</h2>
                 <p>{{event.description}}</p>
