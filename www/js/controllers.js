@@ -62,6 +62,10 @@ angular.module('starter.controllers', [])
         document.getElementsByTagName('ion-nav-bar')[0].style.display = 'none';
     };
 
+    $scope.hideHamburger = function() {
+        document.getElementsByClassName('ion-navicon')[0].style.display = 'none';
+    };
+
     $scope.showNavBar = function() {
         document.getElementsByTagName('ion-nav-bar')[0].style.display = 'block';
     };
@@ -206,6 +210,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('eventCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, Events) {
+    $scope.$parent.hideHamburger();
     var events = Events.findOne($stateParams.eventId);
 
     console.log($stateParams);
