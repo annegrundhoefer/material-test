@@ -194,7 +194,6 @@ angular.module('starter.controllers', [])
 .controller('eventsCtrl', function($scope, $stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion, Events) {
     var events = Events.all();
 
-    console.log(events);
     events.then(function(results){
         $scope.events = [];
         for (var i = 0; i < results.length; i++) {

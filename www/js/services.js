@@ -44,12 +44,18 @@ angular.module('starter.services', [])
   var EventCategory = Parse.Object.extend("EventCategory");
   var Event = Parse.Object.extend("Event");
   var query = new Parse.Query(Event);
-  var events = query.find();
+  var events = query.find().then(
+    function(results) {
+      return results;
+    },
+   function(error) {
+      return error;
+    }
+  );
 
 
   return {
     all: function() {
-      // var events = query.find();
       return events;
     },
     get: function(categoryId) {      
