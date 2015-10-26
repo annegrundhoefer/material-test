@@ -4,9 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'ionMdInput'])
-
-
+angular.module('starter', ['ionic', 'starter.controllers','starter.services', 'ionic-material', 'ionMdInput'])
 
 
 .run(function($ionicPlatform) {
@@ -70,12 +68,32 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
         }
     })
 
+    .state('app.event', {
+        url: '/event/:eventId',
+        views: {
+            'menuContent' : {
+                templateUrl: 'templates/event-view.html',
+                controller: 'eventCtrl'
+            }
+        }
+    })
+
     .state('app.categories', {
         url: '/categories',
         views: {
             'menuContent': {
                 templateUrl: 'templates/categories.html',
                 controller: 'categoriesCtrl'
+            }
+        }
+    })
+
+    .state('app.events', {
+        url: '/events',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/category-events-list.html',
+                controller: 'eventsCtrl'
             }
         }
     })
@@ -91,12 +109,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
     })
 
 
-        .state('app.friends', {
-        url: '/friends',
+    .state('app.members', {
+        url: '/members',
         views: {
             'menuContent': {
-                templateUrl: 'templates/friends.html',
-                controller: 'FriendsCtrl'
+                templateUrl: 'templates/members.html',
+                controller: 'MembersCtrl'
             }
         }
     })
