@@ -1,4 +1,13 @@
 /* Anne's Less */
+html body .has-subheader {
+  top: 82px;
+}
+html body .bar {
+  box-shadow: none;
+}
+html body .gray {
+  background-color: #eee;
+}
 html body a.item-content {
   padding: 0px !important;
 }
@@ -33,12 +42,16 @@ html body .meta h2 {
 }
 html body .meta .date {
   color: #989A9A;
+  margin-bottom: 13px;
 }
 html body .meta .heading {
   color: #ed3424;
   font-size: 12px;
   margin-bottom: 0px;
   margin-top: 16px;
+}
+html body .meta .description {
+  color: #989A9A;
 }
 html body .meta .margin-left {
   margin-left: 48px !important;
