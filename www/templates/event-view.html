@@ -3,7 +3,7 @@
         <div class="hero has-mask" style="background-image: url('{{event.image.url}}')">
         	<div class="content meta">
                 <h3>{{event.title}}</h3>
-                <p class="date">{{event.date}}</p>
+                <p class="date">{{event.date.iso | date: 'MMMM dd, yyyy h:mma'}}</p>
             </div>
          </div>	
             <div class="content meta double-padding">
