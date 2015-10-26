@@ -14,17 +14,26 @@ html body a.item-content {
 html body .bar-assertive-900 {
   background-color: #ed3424;
 }
+html body .button-assertive-900 {
+  background-color: #ed3424 !important;
+}
 html body .uppercase {
   text-transform: uppercase;
 }
 html body clear {
   clear: both;
 }
+html body .bar-dark {
+  background-color: #000!important;
+}
+html body .title {
+  padding-left: 8px;
+}
 html body .meta {
   padding-left: 16px;
 }
 html body .meta .button-stable {
-  margin-left: 150px;
+  margin-left: 130px;
 }
 html body .meta h3 {
   font-size: 24px;
