@@ -7,18 +7,18 @@
     </div>
     <ion-content ng-class="{expanded:$scope.isExpanded}" class="has-header has-subheader">
     <div class="card stable-bg ink ink-dark"></div>
-
-      <!--   <div class="hero has-mask" style="background-image: url('{{events[0].image.url}}')">
-            <div class="content">
-                <h2 class="title">{{events[0].title}}</h2>
-            </div>
-        </div> -->
-
-        <ion-list class="list item card-item in done">
+        <ion-list class="list item card-item in done gray">
         	<ion-item class="card stable-bg ink ink-dark" ng-repeat="event in events" ui-sref="app.event({eventId: event.objectId })">
-                <img src="{{event.image.url}}">
-                <h2>{{event.title}}</h2>
-                <p>{{event.description}}</p>
+                <div class="hero has-mask" style="background-image: url('{{event.image.url}}')">
+                    <div class="content meta">
+                        <h3>{{event.title}}</h3>
+                        <p class="date">July 24, 2014</p>
+                    </div>
+                 </div> 
+                 <div class="content meta double-padding">
+                    <p>Fort Work 8th Floor</p>
+                    <p class="description">{{event.description}}</p>
+                </div>
             </ion-item>
         </ion-list>
     </ion-content>
