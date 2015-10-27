@@ -77,12 +77,12 @@ p {
 ==================================*/
 .app-icon {
     background-color: #fff;
-    background: url('../img/crown.jpg') center;
+    background: url('../img/logo3.png') center;
     background-size: cover;
     border-radius: 50%;
-    height: 125px;
+    height: 150px;
     margin: 0 auto;
-    width: 125px;
+    width: 150px;
 }
 
 .social-login {
@@ -94,4 +94,13 @@ p {
     border-radius: 0px !important;
 }
 
-.item-
+.center-text {
+    text-align: center;
+}
+
+.signin-text {
+    color: #ffffff !important;
+}
+.button-signin {
+    color: #ED3424 !important;
+}
