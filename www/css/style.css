@@ -49,11 +49,14 @@ p {
 /* Menu
 ==================================*/
 .menu .bar.bar-header.expanded {
+    background-size: 120%;
+    background-position: 0%;
     transition: all .5s ease-in-out;
+    background-image: url('../img/red.png');
 }
 
 .menu-open .bar.bar-header.expanded {
-    background-color: #222;
+    
 }
 
 .menu h2 {

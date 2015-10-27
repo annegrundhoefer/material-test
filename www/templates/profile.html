@@ -1,18 +1,20 @@
-<ion-view view-title="Profile">
-    <ion-nav-buttons side="secondary">
-        <a class="button button-clear" ui-sref="app.edit-profile">Edit</a>
+<ion-view view-title="Profile" hide-back-button="true" hide-nav-bar="false">
+    <ion-nav-buttons side="right">
+      <button class="button button-icon button-clear ion-edit" ui-sref="app.edit-profile"></button>
     </ion-nav-buttons>
     <ion-content ng-class="{expanded:$scope.isExpanded}">
-        <div class="hero slide-up" style="background-image: url('img/profile-bg.jpg');">
+        <div class="hero slide-up" style="background-image: url('img/splash.jpg');">
+            <div class="overlay"></div>
             <div class="content">
-                <div class="avatar" style="background-image: url('img/daenerys.jpg');"></div>
+                <div class="avatar" style="background-image: url('img/anne.png');"></div>
                 <h3><a class="light">Geoffrey Byers</a></h3>
                 <h4>UX Designer</h4>
             </div>
         </div>
-        <div>
-            <p>Designer, researcher, maker, hacker, nomad, diesel geek, swimmer // Alum @Siemens, @NASA, @SCAD</p>
-        </div>
+        <div class="content meta double-padding">
+           <h5 class="heading uppercase">BIO</h5>
+            <p class="nopadding bold">Designer, researcher, maker, hacker, nomad, diesel geek, swimmer // Alum @Siemens, @NASA, @SCAD. I like telling stories</p>
+       <h5 class="heading uppercase">CONNECT</h5>
         <div class="list">
           <a class="item item-icon-left" href="#">
             <i class="icon ion-link"></i>
@@ -38,6 +40,7 @@
             <i class="icon ion-social-instagram"></i>
             @geoffreywbyers
           </a>
+        </div>
         </div>
     </ion-content>
 </ion-view>

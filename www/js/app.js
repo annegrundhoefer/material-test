@@ -18,6 +18,9 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services', 'i
             // org.apache.cordova.statusbar required
             StatusBar.styleDefault();
         }        
+        window.addEventListener('native.keyboardshow', function(){
+            document.body.classList.add('keyboard-open');
+        });
     })
 })
 

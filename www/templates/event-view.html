@@ -1,4 +1,7 @@
 <ion-view view-title="{{title}}" align-title="left" ng-model="events">
+    <ion-nav-buttons side="secondary">
+        <button class="button button-icon button-clear ion-share" ui-sref="#"></button>
+    </ion-nav-buttons>
     <ion-content ng-class="{expanded:$scope.isExpanded}" class="has-header">
         <div class="hero has-mask" style="background-image: url('{{event.image.url}}')">
         	<div class="content meta">

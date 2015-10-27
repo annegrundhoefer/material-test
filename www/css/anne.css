@@ -1,15 +1,55 @@
 /* Anne's Less */
+html body .nopadding {
+  padding: 0px 0px 0px 16px;
+  margin: 10px 0px 24px 0px;
+}
+html body .bold {
+  font-weight: 500;
+}
+html body .item-icon-left .icon {
+  color: #d5d5d5;
+}
+html body .item-icon-left {
+  padding-left: 80px;
+}
+html body .menu-open .bar.bar-header.expanded {
+  background-color: #ed3424 !important;
+}
 html body .has-subheader {
   top: 78px;
+}
+html body .stable-bg {
+  background-color: #fff;
 }
 html body .bar {
   box-shadow: none;
 }
+html body .hero {
+  position: relative;
+}
+html body .hero .overlay {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  background: #000;
+  opacity: .6;
+}
 html body .gray {
   background-color: #eee;
 }
+html body .padding {
+  padding: 16px 49px 16px 16px !important;
+}
 html body a.item-content {
   padding: 0px !important;
+}
+html body a.item-content.padding {
+  padding: 16px 49px 16px 16px !important;
 }
 html body .bar-assertive-900 {
   background-color: #ed3424;

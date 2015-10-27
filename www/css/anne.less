@@ -4,17 +4,57 @@
 
 html {
 	body {
+		.nopadding {
+			padding: 0px 0px 0px 16px;
+			margin: 10px 0px 24px 0px;
+		}
+		.bold {
+			font-weight: 500;
+		}
+		.item-icon-left .icon {
+			color: #d5d5d5;
+		}
+		.item-icon-left {
+			padding-left: 80px;
+		}
+		.menu-open .bar.bar-header.expanded {
+			background-color: @red !important;
+		}
 		.has-subheader {
 			top: 78px;
+		}
+		.stable-bg {
+			background-color: #fff;
 		}
 		.bar {
 			box-shadow: none;
 		}
+		.hero {
+			position: relative;
+			.overlay {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				right: 0px;
+				bottom: 0px;
+				height: 100%;
+				width: 100%;
+				z-index: 0;
+				background: #000;
+				opacity: .6;
+			}
+		}
 		.gray {
 			background-color: #eee;
 		}
+		.padding {
+			padding: 16px 49px 16px 16px !important;
+		}
 		a.item-content {
 			padding: 0px !important;
+			&.padding {
+				padding: 16px 49px 16px 16px !important;
+			}
 		}
 		.bar-assertive-900 {
 			background-color: @red;
