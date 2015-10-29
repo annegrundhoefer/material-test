@@ -264,6 +264,32 @@ angular.module('starter.controllers', [])
     ionicMaterialInk.displayEffect();
 })
 
+/*********************************************/
+/*         
+    About
+*/
+/*********************************************/
+
+.controller('AboutCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
+    // Set Header
+    $scope.$parent.showHeader();
+
+    // Set Motion
+    $timeout(function() {
+        ionicMaterialMotion.slideUp({
+            selector: '.slide-up'
+        });
+    }, 300);
+
+    $timeout(function() {
+        ionicMaterialMotion.fadeSlideInRight({
+            startVelocity: 3000
+        });
+    }, 700);
+
+    // Set Ink
+    ionicMaterialInk.displayEffect();
+})
 
 /*********************************************/
 /*         
