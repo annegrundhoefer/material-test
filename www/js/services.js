@@ -44,6 +44,7 @@ angular.module('starter.services', [])
   var EventCategory = Parse.Object.extend("EventCategory");
   var Event = Parse.Object.extend("Event");
   var query = new Parse.Query(Event);
+  query.ascending("date");
   var events = query.find().then(
     function(results) {
       return results;
