@@ -4,19 +4,23 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers','starter.services', 'ionic-material', 'ionMdInput'])
+angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers','starter.services', 'ionic-material', 'ionMdInput'])
 
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform,$cordovaStatusbar) {
+    
     $ionicPlatform.ready(function() {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
         // for form inputs)
+        $cordovaStatusbar.styleHex('#ffffff');
         if (window.cordova && window.cordova.plugins.Keyboard) {
             cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
         }
         if (window.StatusBar) {
+            $cordovaStatusbar.overlaysWebView(true);
+            $cordovaStatusbar.styleHex('#ffffff');
             // org.apache.cordova.statusbar required
-            StatusBar.styleDefault();
+            StatusBar.styleHex('#ffffff');
         }        
         window.addEventListener('native.keyboardshow', function(){
             document.body.classList.add('keyboard-open');

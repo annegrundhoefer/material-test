@@ -63,11 +63,17 @@ angular.module('starter.controllers', [])
     };
 
     $scope.hideHamburger = function() {
-        document.getElementsByClassName('ion-navicon')[0].style.display = 'none';
+        console.log(document.getElementsByClassName('ion-navicon'));
+        for (var i = 0; i < document.getElementsByClassName('ion-navicon').length; i++) {
+            document.getElementsByClassName('ion-navicon')[i].style.display = 'none';
+        }
+        
     };
 
     $scope.showNavBar = function() {
-        document.getElementsByTagName('ion-nav-bar')[0].style.display = 'block';
+        for (var i = 0; i < document.getElementsByClassName('ion-navicon').length; i++) {
+            document.getElementsByClassName('ion-navicon')[i].style.display = 'block';
+        }
     };
 
     $scope.noHeader = function() {
@@ -193,6 +199,9 @@ angular.module('starter.controllers', [])
 /*********************************************/
 
 .controller('eventsCtrl', function($scope, $stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion, Events) {
+        
+    $scope.$parent.showNavBar();
+
     var events = Events.all();
 
     events.then(function(results){
@@ -204,19 +213,21 @@ angular.module('starter.controllers', [])
 
     ionicMaterialInk.displayEffect();
 
+    
+
 })
 
-.controller('eventCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, Events) {
-    $scope.$parent.hideHamburger();
-    var events = Events.findOne($stateParams.eventId);
+.controller('eventCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, Events) {   
 
-    console.log($stateParams);
+    $scope.$parent.hideHamburger();
+
+    var events = Events.findOne($stateParams.eventId);
 
     events.then(function(results){
         $scope.event = results.toJSON();
     });
 
-    console.log($scope);
+
 
     $timeout(function() {
         ionicMaterialMotion.fadeSlideIn({
@@ -237,10 +248,6 @@ angular.module('starter.controllers', [])
 .controller('MembersCtrl', function($scope, $stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion, Members) {
     // Set Header
     $scope.$parent.showHeader();
-    $scope.$parent.clearFabs();
-    $scope.isExpanded = false;
-    $scope.$parent.setExpanded(false);
-    $scope.$parent.setHeaderFab(false);
 
     var members = Members.all();
     members.then(function(results){
@@ -325,6 +332,7 @@ angular.module('starter.controllers', [])
 /*********************************************/
 
 .controller('EditProfileCtrl', function($scope, $stateParams, $timeout) {
+    $scope.$parent.hideHamburger();
     $scope.alert = function() {
         console.log('this works!');
     }
